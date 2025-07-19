@@ -4,7 +4,8 @@
   "scripts": {
     "dev": "nodemon --exec ts-node src/index.ts",
     "test": "vitest",
-    "test:watch": "vitest --watch"
+    "test:watch": "vitest --watch",
+    "build": "npx tsc && cp -r src/views dist/views && cp -r src/assets dist/assets"
   },
   "devDependencies": {
     "@types/express": "^5.0.3",
