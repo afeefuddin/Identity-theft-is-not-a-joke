@@ -1,0 +1,32 @@
+.header {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bold {
+  font-weight: bold;
+}
+.gap-2 {
+    gap: 8px
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.flex-row {
+    flex-direction: row;
+}
+.items-center {
+    align-items: center;
+}
+a {
+    text-decoration: none;
+}

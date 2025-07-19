@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Identity Theft is Not a Joke</title>
+    <link rel="stylesheet" href="/index.css" />
+
+    <link rel="stylesheet" href="/header.css" />
+    <script src="/scripts/index.js" > </script>
+  </head>
+  <body>
+    {{> header}}
+
+    <div class="form-container">
+      <h1>Identify Yourself</h1>
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" placeholder="you@example.com"  />
+        <label for="phone">Phone Number</label>
+        <input type="tel" name="phoneNumber" id="phone" placeholder="+91 9876543210" />
+        <button type="submit" id="submit-btn">Submit</button>
+    </div>
+  </body>
+</html>

@@ -11,11 +11,12 @@ import ContactService from "../services/contact.service";
 
 const contactGetBodySchema = z.union([
   z.object({ email: z.email().optional(), phoneNumber: z.string().min(1) }),
-  z.object({ email: z.email(), phoneNumber: z.string().min(1).optional() }),
+  z.object({ email: z.email(), phoneNumber: z.string().optional() }),
 ]);
 
-export async function GET(req: Request, res: Response, next: NextFunction) {
+export async function POST(req: Request, res: Response, next: NextFunction) {
   try {
+    console.log(req.body);
     const { email, phoneNumber } = contactGetBodySchema.parse(req.body);
 
     const filter: Prisma.ContactWhereInput = {};
@@ -49,6 +50,7 @@ export async function GET(req: Request, res: Response, next: NextFunction) {
     return res.status(200).json(contact);
   } catch (error) {
     if (error instanceof z.ZodError) {
+      console.log(error);
       return res.status(400).json({
         error: "Invalid input",
       });

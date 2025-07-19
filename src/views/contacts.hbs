@@ -1,0 +1,59 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Identity theft is not a Joke</title>
+    <link rel="stylesheet" href="/contact.css" />
+    <link rel="stylesheet" href="/header.css" />
+  </head>
+  <body>
+    {{> header}}
+    
+    <div class="contacts-container">
+      <h2 class="page-title">Contacts</h2>
+      
+      <div class="contacts-table">
+        <div class="table-header">
+          <div class="table-row">
+            <div class="cell"></div>
+            <div class="cell"><strong>ID</strong></div>
+            <div class="cell"><strong>Email</strong></div>
+            <div class="cell"><strong>Phone</strong></div>
+            <div class="cell"></div>
+          </div>
+        </div>
+
+        {{#each contacts}}
+          <div class="contact-row" data-contact-id="{{id}}">
+            <div class="table-row">
+              <div class="cell">
+                <button class="expand-btn" onclick="toggleSecondary('{{id}}')">▶</button>
+              </div>
+              <div class="cell id-cell">{{id}}</div>
+              <div class="cell email-cell">{{email}}</div>
+              <div class="cell phone-cell">{{phoneNumber}}</div>
+              <div class="cell"></div>
+            </div>
+            
+            {{#if linkingContacts}}
+              <div class="secondary-contacts" id="secondary-{{id}}">
+                <div class="secondary-title">Secondary Contacts</div>
+                {{#each linkingContacts}}
+                  <div class="secondary-contact">
+                    <div class="cell"></div>
+                    <div class="cell id-cell">{{id}}</div>
+                    <div class="cell email-cell">{{email}}</div>
+                    <div class="cell phone-cell">{{phoneNumber}}</div>
+                    <div class="cell"></div>
+                  </div>
+                {{/each}}
+              </div>
+            {{/if}}
+          </div>
+        {{/each}}
+      </div>
+    </div>
+
+    <script src="/scripts/contacts.js"></script>
+  </body>
+</html>
