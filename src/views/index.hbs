@@ -22,9 +22,14 @@
 
     <div style="margin-top: 30px; font-weight: bold; font-size: x-large;"> OR</div>
 
-    <div class="form-container" style="margin-top: 20px;">
+    <div class="form-container flex flex-col gap-2" style="margin-top: 20px;">
       <div style="font-weight: 600; margin-bottom: 10px;">Call the Api</div>
-      <input disabled value="https://identify.afeefuddin.com/api/identify"></input>
+      <textarea disabled id="curl-command" rows="8" style="width: 100%; resize: none;">
+curl -X POST https://identity.afeefuddin.com/api/identify \
+-H "Content-Type: application/json" \
+-d '{"email": "dwightschrute@dundermifflin.com", "phoneNumber": "9812345682"}'
+      </textarea>
+      <button id="copy-btn">Copy</button>
     </div>
   </body>
 </html>

@@ -45,7 +45,10 @@ export async function POST(req: Request, res: Response, next: NextFunction) {
       return res.status(200).json(newContact);
     }
 
-    const contact = ContactService.identifyOrCreateContact(email, phoneNumber);
+    const contact = await ContactService.identifyOrCreateContact(
+      email,
+      phoneNumber
+    );
 
     return res.status(200).json(contact);
   } catch (error) {
