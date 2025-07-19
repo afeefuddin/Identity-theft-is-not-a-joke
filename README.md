@@ -11,6 +11,7 @@ https://github.com/user-attachments/assets/30009066-a769-4310-8977-23f5e2464994
 3. NeonDb (Postgresql)
 4. Prisma
 5. HandleBars
+6. Vitest
 
 ### Approach
 Using Disjoint set, every secondary element will have a parent primary element. 
