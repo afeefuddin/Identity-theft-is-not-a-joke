@@ -29,4 +29,8 @@
 }
 a {
     text-decoration: none;
+    color: #333;
+}
+.underline {
+    text-decoration: underline;
 }

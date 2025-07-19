@@ -16,15 +16,20 @@ document.addEventListener("DOMContentLoaded", () => {
         phoneNumber: phoneIp.value,
       }),
       headers: {
-        "Content-Type": "application/json", // This is crucial
+        "Content-Type": "application/json",
       },
     })
       .then((response) => {
         if (response.status === 200) {
-          alert("Added, go to contacts page to check contacts");
+          emailIp.value = "";
+          phoneIp.value = "";
+          return "Success, go to contacts page to check contacts";
         } else {
-          alert("Error: ", response.body);
+          return response.body;
         }
+      })
+      .then((body) => {
+        alert(body);
       })
       .catch((e) => {
         alert("Error: ", e);

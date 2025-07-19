@@ -35,9 +35,9 @@
               <div class="cell"></div>
             </div>
             
-            {{#if linkingContacts}}
-              <div class="secondary-contacts" id="secondary-{{id}}">
-                <div class="secondary-title">Secondary Contacts</div>
+            <div class="secondary-contacts" id="secondary-{{id}}">
+              <div class="secondary-title">Secondary Contacts</div>
+              {{#if linkingContacts}}
                 {{#each linkingContacts}}
                   <div class="secondary-contact">
                     <div class="cell"></div>
@@ -47,8 +47,10 @@
                     <div class="cell"></div>
                   </div>
                 {{/each}}
-              </div>
-            {{/if}}
+              {{else}}
+                  <div style="padding-left: 50px;">There are no secondary contacts.</div>
+              {{/if}}
+            </div>
           </div>
         {{/each}}
       </div>
